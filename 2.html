@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        div {
+            padding: 5px;
+        }
+
+        #maincals,
+        #maincals2,
+        #maincals3 {
+            display: none;
+
+
+        }
+
+        .all_btn {
+            display: flex;
+
+            justify-content: center;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <div class="all_btn">
+        <button class="btn1 btn btn-primary" id="btn1">калькулятор 1</button>
+        <button class="btn2 btn btn-warning" id="btn2">калькулятор 2</button>
+        <button class="btn3 btn btn-success" id="btn3">калькулятор 3</button>
+    </div>
+    <!-- калькултор 1 -->
+    <div id="maincals">
+        <p>Калькулятор 1</p>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="frmss">
+                        <label for="obs1">Введите длину картины</label>
+                        <input type="text" name="obs1" id="obs1" value="" data="Длина От">
+                        <span class="sup">см</span>
+                    </div>
+                    <div class=" frmss">
+                        <label for="obs">Введите ширину картины</label>
+                        <input type="text" name="obs" id="obs" value="" data="Ширина  От">
+                        <span class="sup">см</span>
+                    </div>
+
+                    <input type="hidden" name="obs2" id="obs2" value="" data="Ширина  профиля рамы">
+
+                    <div class=" frmss">
+
+
+                        <div class="selects">
+                            <select name="visota" id="visotp">
+                                <option disabled selected>Тип подвеса</option>
+                                <option value="0">верёвочный подвес</option>
+                                <option value="300">тростниковый</option>
+
+                            </select>
+                            <span class="sup">руб см <sup>2</sup></span>
+                        </div>
+                        <div class="selects frmss">
+                            <select name="etagey" id="etagey">
+                                <option value="" disabled selected>тип профиля рамы (в рублях за погонный сантиметр)
+                                </option>
+                                <option value='2.3' value1="2.3" id="c1">c1 – ультраузкий = 4.5 руб/см.п. – признак
+                                    C=2.3 см
+                                </option>
+                                <option value="5.5" id="c2">c2 – узкий = 5,5 руб/см.п. – признак C=4 см</option>
+                                <option value="6" id="c3">c3 – средний = 6 руб/см.п. – признак C=5 см</option>
+                                <option value="7" id="c4">c4 – широкий = 7 руб/см.п. – признак C=6 см</option>
+
+                                <option value="4.5" id="c5">c5 – ультраузкий прямой = 4, 5 руб / см.п. – признак C = 2.3
+                                    см
+                                </option>
+                                <option value="5.5" id="c6">c6 – узкий прямой = 5, 5 руб / см.п. – признак C = 4 см
+                                </option>
+                                <option value="6" id="c7">c7 – средний прямой = 6 руб / см.п. – признак C = 5 см
+                                </option>
+                                <option value="7" id="c8"> c8 – широкий прямой = 7 руб / см.п. – признак C = 6 см
+                                </option>
+                                <option value="4.5" id="c9">c9 – обкладной = 4, 5 руб / см.п. – признак C = 2 см
+                                </option>
+                                <option value="5.5" id="c10">c10 – обкладной прямой = 5, 5 руб / см.п. – признак C = 2
+                                    см
+                                </option>
+                                <option value="6" id="c11"> c11 – парящий = 6 руб / см.п. – признак C = 4 см</option>
+                                <option value="6" id="c12"> c12 – деревянное паспарту = 6 руб / см.п. – признак C = 6 см
+                                </option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 rightcalc">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <span class="title"><span>Окраска</span></span>
+                        <div class="row">
+                            <input type="hidden" name="stena[]" value="">
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob">
+                                    <label for="stena1" class="radios"> <input type="radio" class="factors"
+                                            name="stena[]" value="0.7" id="stena1" checked>
+                                        один цвет </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob">
+                                    <label for="stena2" class="radios"> <input type="radio" class="factors"
+                                            name="stena[]" value="1.5" id="stena2">
+                                        Два цвета</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button>распечатать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Конец калькулятор 1-->
+    <!--Калькулятор 2-->
+
+    <div id="maincals2">
+        <p>Калькулятор 2</p>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="frmss">
+                        <label for="obs_21">Введите длину картины</label>
+                        <input type="text" name="obs_21" id="obs_21" value="" data="Длина От">
+                        <span class="sup">см</span>
+                    </div>
+                    <div class=" frmss">
+                        <label for="obs2">Введите ширину картины</label>
+                        <input type="text" name="obs_2" id="obs_2" value="" data="Ширина  От">
+                        <span class="sup">см</span>
+                    </div>
+
+                    <input type="hidden" name="obs_22" id="obs_22" value="" data="Ширина  профиля рамы">
+
+                    <input type="hidden" name="obs_22_2" id="obs_22_2" value="" data="Ширина  профиля рамы2">
+
+                    <div class=" frmss">
+
+
+                        <div class="selects">
+                            <select name="visota2" id="visotp2">
+                                <option disabled selected>Тип подвеса</option>
+                                <option value="0">верёвочный подвес</option>
+                                <option value="300">тростниковый</option>
+
+                            </select>
+                            <span class="sup">руб см <sup>2</sup></span>
+                        </div>
+                        <div class="selects frmss">
+                            <select name="etagey2" id="etagey2">
+                                <option value="" disabled selected>тип профиля рамы 1 C1 (в рублях за погонный
+                                    сантиметр)
+                                </option>
+                                <option value='4.5' id="b1">c1 – ультраузкий = 4.5 руб/см.п. – признак C=2.3 см
+                                </option>
+                                <option value="5.5" id="b2">c2 – узкий = 5,5 руб/см.п. – признак C=4 см</option>
+                                <option value="6" id="b3">c3 – средний = 6 руб/см.п. – признак C=5 см</option>
+                                <option value="7" id="b4">c4 – широкий = 7 руб/см.п. – признак C=6 см</option>
+
+                                <option value="4.5" id="b5">c5 – ультраузкий прямой = 4, 5 руб / см.п. – признак C = 2.3
+                                    см
+                                </option>
+                                <option value="5.5" id="b6">c6 – узкий прямой = 5, 5 руб / см.п. – признак C = 4 см
+                                </option>
+                                <option value="6" id="b7">c7 – средний прямой = 6 руб / см.п. – признак C = 5 см
+                                </option>
+                                <option value="7" id="b8"> c8 – широкий прямой = 7 руб / см.п. – признак C = 6 см
+                                </option>
+                                <option value="4.5" id="b9">c9 – обкладной = 4, 5 руб / см.п. – признак C = 2 см
+                                </option>
+                                <option value="5.5" id="b10">c10 – обкладной прямой = 5, 5 руб / см.п. – признак C = 2
+                                    см
+                                </option>
+                                <option value="6" id="b11"> c11 – парящий = 6 руб / см.п. – признак C = 4 см</option>
+                                <option value="6" id="b12"> c12 – деревянное паспарту = 6 руб / см.п. – признак C = 6 см
+                                </option>
+                            </select>
+
+
+
+
+                        </div>
+                        <div class="selects frmss">
+                            <select name="etagey2_2" id="etagey2_2">
+                                <option value="" disabled selected>тип профиля рамы2 C2 (в рублях за погонный сантиметр)
+                                </option>
+                                <option value='4.5' id="z1">c1 – ультраузкий = 4.5 руб/см.п. – признак C=2.3 см
+                                </option>
+                                <option value="5.5" id="z2">c2 – узкий = 5,5 руб/см.п. – признак C=4 см</option>
+                                <option value="6" id="z3">c3 – средний = 6 руб/см.п. – признак C=5 см</option>
+                                <option value="7" id="z4">c4 – широкий = 7 руб/см.п. – признак C=6 см</option>
+
+                                <option value="4.5" id="z5">c5 – ультраузкий прямой = 4, 5 руб / см.п. – признак C = 2.3
+                                    см
+                                </option>
+                                <option value="5.5" id="z6">c6 – узкий прямой = 5, 5 руб / см.п. – признак C = 4 см
+                                </option>
+                                <option value="6" id="z7">c7 – средний прямой = 6 руб / см.п. – признак C = 5 см
+                                </option>
+                                <option value="7" id="z8"> c8 – широкий прямой = 7 руб / см.п. – признак C = 6 см
+                                </option>
+                                <option value="4.5" id="z9">c9 – обкладной = 4, 5 руб / см.п. – признак C = 2 см
+                                </option>
+                                <option value="5.5" id="z10">c10 – обкладной прямой = 5, 5 руб / см.п. – признак C = 2
+                                    см
+                                </option>
+                                <option value="6" id="z11"> c11 – парящий = 6 руб / см.п. – признак C = 4 см</option>
+                                <option value="6" id="z12"> c12 – деревянное паспарту = 6 руб / см.п. – признак C = 6 см
+                                </option>
+                            </select>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 rightcalc">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <span class="title"><span>Окраска</span></span>
+                        <div class="row">
+                            <input type="hidden" name="stena2[]" value="">
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob2">
+                                    <label for="stena21" class="radios"> <input type="radio" class="factors"
+                                            name="stena2[]" value="0.7" id="stena21" checked>
+                                        один цвет </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob2">
+                                    <label for="stena22" class="radios"> <input type="radio" class="factors"
+                                            name="stena2[]" value="1.5" id="stena22">
+                                        Два цвета</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <button>распечатать</button>
+    </div>
+
+    <!--Конец калькулятор 2-->
+
+    <!--Калькулятор 3-->
+
+    <div id="maincals3">
+        <p>Калькулятор 3</p>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="frmss">
+                        <label for="obs31">Введите длину картины</label>
+                        <input type="text" name="obs31" id="obs31" value="" data="Длина От">
+                        <span class="sup">см</span>
+                    </div>
+                    <div class=" frmss">
+                        <label for="obs3">Введите ширину картины</label>
+                        <input type="text" name="obs3" id="obs3" value="" data="Ширина  От">
+                        <span class="sup">см</span>
+                    </div>
+
+                    <input type="hidden" name="obs32" id="obs32" value="" data="Ширина  профиля рамы">
+
+                    <div class=" frmss">
+
+
+                        <div class="selects">
+                            <select name="visota3" id="visotp3">
+                                <option disabled selected>Тип подвеса</option>
+                                <option value="0">верёвочный подвес</option>
+                                <option value="300">тростниковый</option>
+
+                            </select>
+                            <span class="sup">руб см <sup>2</sup></span>
+                        </div>
+                        <div class="selects frmss">
+                            <select name="etagey3" id="etagey3">
+                                <option value="" disabled selected>тип профиля рамы (в рублях за погонный сантиметр)
+                                </option>
+                                <option value='4.5' id="v1">c1 – ультраузкий = 4.5 руб/см.п. – признак C=2.3 см
+                                </option>
+                                <option value="5.5" id="v2">c2 – узкий = 5,5 руб/см.п. – признак C=4 см</option>
+                                <option value="6" id="v3">c3 – средний = 6 руб/см.п. – признак C=5 см</option>
+                                <option value="7" id="v4">c4 – широкий = 7 руб/см.п. – признак C=6 см</option>
+
+                                <option value="4.5" id="v5">c5 – ультраузкий прямой = 4, 5 руб / см.п. – признак C = 2.3
+                                    см
+                                </option>
+                                <option value="5.5" id="v6">c6 – узкий прямой = 5, 5 руб / см.п. – признак C = 4 см
+                                </option>
+                                <option value="6" id="v7">c7 – средний прямой = 6 руб / см.п. – признак C = 5 см
+                                </option>
+                                <option value="7" id="v8"> c8 – широкий прямой = 7 руб / см.п. – признак C = 6 см
+                                </option>
+                                <option value="4.5" id="v9">c9 – обкладной = 4, 5 руб / см.п. – признак C = 2 см
+                                </option>
+                                <option value="5.5" id="v10">c10 – обкладной прямой = 5, 5 руб / см.п. – признак C = 2
+                                    см
+                                </option>
+                                <option value="6" id="v11"> c11 – парящий = 6 руб / см.п. – признак C = 4 см</option>
+                                <option value="6" id="v12"> c12 – деревянное паспарту = 6 руб / см.п. – признак C = 6 см
+                                </option>
+                            </select>
+
+
+
+
+                            <!-- <select name="etagey" id="etagey">
+                            <option disabled selected>Кол-во этажей</option>
+                            <option value="1.15">Один</option>
+                            <option value="1">Два</option>
+                            <option value="1">Три</option>
+                        </select> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 rightcalc">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <span class="title"><span>Окраска</span></span>
+                        <div class="row">
+                            <input type="hidden" name="stena3[]" value="">
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob3">
+                                    <label for="stena31" class="radios"> <input type="radio" class="factors"
+                                            name="stena3[]" value="0.7" id="stena31" checked>
+                                        один цвет </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 rad">
+                                <div class="radiob3">
+                                    <label for="stena32" class="radios"> <input type="radio" class="factors"
+                                            name="stena3[]" value="1.5" id="stena32">
+                                        Два цвета</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <select name="paspartu" id="paspartu">
+                    <option disabled selected>Тип паспару</option>
+                    <option value="0.11">паспарту серии НеоПрофи = 0,11 руб/см.кв </option>
+                    <option value="0.042">паспарту серии НеоСтарт = 0,042 руб/см.кв</option>
+
+                </select>
+            </div>
+
+            <div>
+                <select name="shirina_paspartu" id="shirina_paspartu">
+                    <option disabled selected>Ширина паспару</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+
+
+            <div>
+                <select name="tip_stekla" id="tip_stekla">
+                    <option disabled selected>тип стекла (в рублях за сантиметр квадратный)</option>
+                    <option value="0.5">Один– прозрачный пластик толщиной 2мм = 0.5 руб/см.кв</option>
+
+                </select>
+            </div>
+
+            <div>
+                <select name="tip_zadnika" id="tip_zadnika">
+                    <option disabled selected>тип задника (в рублях за сантиметр квадратный)</option>
+                    <option value="0.029">переплётный картон = 0,029 руб/см.кв</option>
+
+                </select>
+            </div>
+
+        </div>
+        <button>распечатать</button>
+    </div>
+    <div class="result">
+        <span class="title" style="background-color:rgba(94, 144, 219, 0.671)">расчет для калькулятора 1</span>
+        <p class="txt1" style="background-color: rgba(94, 144, 219, 0.671)"></p>
+        <p class="txt" style="background-color: rgba(94, 144, 219, 0.671)"></p>
+        <p class="txt2" style="background-color: rgba(94, 144, 219, 0.671)"></p>
+
+
+    </div>
+    <div class="result2">
+        <span class="title" style="background-color:rgb(252 252 8 / 75%)">расчет для калькулятора 2 </span>
+        <p class="txt_21" style="background-color:rgb(252 252 8 / 75%)"></p>
+        <p class="txt_2" style="background-color:rgb(252 252 8 / 75%)"></p>
+        <p class="txt_22" style="background-color:rgb(252 252 8 / 75%)"></p>
+
+
+
+    </div>
+    <div class="result3">
+        <span class="title" style="background-color:rgba(146, 214, 180, 0.671)"> расчет для калькулятора 3 </span>
+        <p class="txt31" style="background-color:rgba(146, 214, 180, 0.671)"></p>
+        <p class="txt3" style="background-color:rgba(146, 214, 180, 0.671)"></p>
+        <p class="txt32" style="background-color:rgba(146, 214, 180, 0.671)"></p>
+
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btn1').click(function () {
+                $('#maincals').css('display', 'block');
+                $('#maincals2').css('display', 'none');
+                $('#maincals3').css('display', 'none');
+
+            });
+            $('#btn2').click(function () {
+                $('#maincals').css('display', 'none');
+                $('#maincals2').css('display', 'block');
+                $('#maincals3').css('display', 'none');
+
+            });
+
+            $('#btn3').click(function () {
+                $('#maincals').css('display', 'none');
+                $('#maincals2').css('display', 'none');
+                $('#maincals3').css('display', 'block');
+
+            });
+
+        });
+
+
+        $("#etagey").change(function () {
+
+            if ($(this).prop('selectedIndex') == 1) {
+
+                $("input[name='obs2']").val(2.3);
+
+
+            }
+            if ($(this).prop('selectedIndex') == 2) {
+
+                $("input[name='obs2']").val(4);
+
+            }
+            if ($(this).prop('selectedIndex') == 3) {
+                $("input[name='obs2']").val(5);
+
+            }
+            if ($(this).prop('selectedIndex') == 4) {
+                $("input[name='obs2']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 5) {
+                $("input[name='obs2']").val(2.3);
+            }
+            if ($(this).prop('selectedIndex') == 6) {
+                $("input[name='obs2']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 7) {
+                $("input[name='obs2']").val(5);
+            }
+            if ($(this).prop('selectedIndex') == 8) {
+                $("input[name='obs2']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 9) {
+                $("input[name='obs2']").val(2);
+            }
+
+
+
+            if ($(this).prop('selectedIndex') == 10) {
+                $("input[name='obs2']").val(2);
+            }
+            if ($(this).prop('selectedIndex') == 11) {
+                $("input[name='obs2']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 12) {
+                $("input[name='obs2']").val(6);
+            }
+
+        });
+
+        $("#etagey3").change(function () {
+
+            if ($(this).prop('selectedIndex') == 1) {
+
+                $("input[name='obs32']").val(2.3);
+
+
+            }
+            if ($(this).prop('selectedIndex') == 2) {
+
+                $("input[name='obs32']").val(4);
+
+            }
+            if ($(this).prop('selectedIndex') == 3) {
+                $("input[name='obs32']").val(5);
+
+            }
+            if ($(this).prop('selectedIndex') == 4) {
+                $("input[name='obs32']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 5) {
+                $("input[name='obs32']").val(2.3);
+            }
+            if ($(this).prop('selectedIndex') == 6) {
+                $("input[name='obs32']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 7) {
+                $("input[name='obs32']").val(5);
+            }
+            if ($(this).prop('selectedIndex') == 8) {
+                $("input[name='obs32']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 9) {
+                $("input[name='obs32']").val(2);
+            }
+
+
+
+            if ($(this).prop('selectedIndex') == 10) {
+                $("input[name='obs32']").val(2);
+            }
+            if ($(this).prop('selectedIndex') == 11) {
+                $("input[name='obs32']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 12) {
+                $("input[name='obs32']").val(6);
+            }
+
+        });
+
+        //   для 2 калькулятора
+        $("#etagey2").change(function () {
+
+            if ($(this).prop('selectedIndex') == 1) {
+
+                $("input[name='obs_22']").val(2.3);
+
+
+            }
+            if ($(this).prop('selectedIndex') == 2) {
+
+                $("input[name='obs_22']").val(4);
+
+            }
+            if ($(this).prop('selectedIndex') == 3) {
+                $("input[name='obs_22']").val(5);
+
+            }
+            if ($(this).prop('selectedIndex') == 4) {
+                $("input[name='obs_22']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 5) {
+                $("input[name='obs_22']").val(2.3);
+            }
+            if ($(this).prop('selectedIndex') == 6) {
+                $("input[name='obs_22']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 7) {
+                $("input[name='obs_22']").val(5);
+            }
+            if ($(this).prop('selectedIndex') == 8) {
+                $("input[name='obs_22']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 9) {
+                $("input[name='obs_22']").val(2);
+            }
+
+
+
+            if ($(this).prop('selectedIndex') == 10) {
+                $("input[name='obs_22']").val(2);
+            }
+            if ($(this).prop('selectedIndex') == 11) {
+                $("input[name='obs_22']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 12) {
+                $("input[name='obs_22']").val(6);
+            }
+
+        });
+
+        //конец первой 
+
+
+        //начало второй
+        $("#etagey2_2").change(function () {
+
+            if ($(this).prop('selectedIndex') == 1) {
+
+                $("input[name='obs_22_2']").val(2.3);
+
+
+            }
+            if ($(this).prop('selectedIndex') == 2) {
+
+                $("input[name='obs_22_2']").val(4);
+
+            }
+            if ($(this).prop('selectedIndex') == 3) {
+                $("input[name='obs_22_2']").val(5);
+
+            }
+            if ($(this).prop('selectedIndex') == 4) {
+                $("input[name='obs_22_2']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 5) {
+                $("input[name='obs_22_2']").val(2.3);
+            }
+            if ($(this).prop('selectedIndex') == 6) {
+                $("input[name='obs_22_2']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 7) {
+                $("input[name='obs_22_2']").val(5);
+            }
+            if ($(this).prop('selectedIndex') == 8) {
+                $("input[name='obs_22_2']").val(6);
+            }
+            if ($(this).prop('selectedIndex') == 9) {
+                $("input[name='obs_22_2']").val(2);
+            }
+
+
+
+            if ($(this).prop('selectedIndex') == 10) {
+                $("input[name='obs_22_2']").val(2);
+            }
+            if ($(this).prop('selectedIndex') == 11) {
+                $("input[name='obs_22_2']").val(4);
+            }
+            if ($(this).prop('selectedIndex') == 12) {
+                $("input[name='obs_22_2']").val(6);
+            }
+
+        });
+        // конец второй
+
+
+        // $("#etagey").change(function () {
+        //     a = $("input[name='obs2']").val(0);
+        //     if (document.getElementById("c1").value == 4.5) {
+        //         a = $("input[name='obs2']").val(2);
+        //     }
+        //     if (document.getElementById("c2").value == 5.5) {
+        //         a = $("input[name='obs2']").val(3);
+        //     }
+        // }); 
+
+        var c1 = "4.5";
+        var c2 = "5.5";
+        var c3 = "6";
+        var c4 = "7";
+        var c5 = "4.5";
+        var c6 = "5.5";
+        var c7 = "6";
+        var c8 = "7";
+        var c9 = "4.5";
+        var c10 = "5.5";
+        var c11 = "6";
+        var c12 = "6";
+
+        $('#maincals').on('change input', calcAndShow);
+        function calcAndShow() {
+
+
+
+
+
+            document.getElementById("c1").value = c1;
+            document.getElementById("c2").value = c2;
+            document.getElementById("c3").value = c3;
+            document.getElementById("c4").value = c4;
+            document.getElementById("c5").value = c5;
+            document.getElementById("c6").value = c6;
+            document.getElementById("c7").value = c7;
+            document.getElementById("c8").value = c8;
+            document.getElementById("c9").value = c9;
+            document.getElementById("c10").value = c10;
+            document.getElementById("c11").value = c11;
+            document.getElementById("c12").value = c12;
+
+            var a = parseFloat($("#obs").val());//для картины
+            var b = parseFloat($("#obs1").val());//ширина картины
+            var v7 = parseFloat($("#obs2").val());//ширина профиля рамы
+            var i = parseFloat($("#visotp").val());//тип подвеса
+            var c = parseFloat($("#etagey").val());// тип профиля рамы
+            var h = parseFloat($('input[name="stena[]"]:checked').val());//окраска 
+            var j = 100;//для первого калькулятора
+            var v5 = $('#mainresult');
+            var text, text2, summa, text3;
+            text = 'Подробный расчет: ((' + a + '+' + b + ')' + '*2 + 8 *' + v7 + ')*' + c + '+ ' + i + '+((' + a + '+' + b + ')*2+8 *' + v7 + ')*' + h + '+' + j + ' = ';
+            text2 = ((a + b) * 2 + 8 * v7) * c + i + ((a + b) * 2 + 8 * v7) * h + j;
+            text3 = 'руб.';
+            text4 = 'Итого: ';
+            summa1 = text4 + '' + text2;
+            if (text2 === text2) { } else {
+                return 0;
+            }
+            var res = text2.toFixed(1);
+            summa = text + ' ' + res + ' ' + text3;
+            // все что выбрали
+            var text5 = $('#etagey').find(":selected").text();
+            var text6 = $("#visotp").find(":selected").text();
+            var text7 = $(".radiob").find('input[name="stena[]"]:checked').closest('label').text();
+            var text8 = '( ' + a + 'x' + b + ' )';
+            var summa_vsego = text8 + '/' + text5 + '/' + text6 + '/' + text7 + ' = ' + summa1;
+            $('#mainresults').val(text2);
+            $('.txt').html(summa);
+            $('.txt1').html(summa1);
+            $('.txt2').html(summa_vsego);
+
+
+
+
+        }
+
+        // для калькулятора 2
+
+        $('#maincals2').on('change input', calcAndShow2);
+        function calcAndShow2() {
+
+
+
+            document.getElementById("b1").value = c1;
+            document.getElementById("b2").value = c2;
+            document.getElementById("b3").value = c3;
+            document.getElementById("b4").value = c4;
+            document.getElementById("b5").value = c5;
+            document.getElementById("b6").value = c6;
+            document.getElementById("b7").value = c7;
+            document.getElementById("b8").value = c8;
+            document.getElementById("b9").value = c9;
+            document.getElementById("b10").value = c10;
+            document.getElementById("b11").value = c11;
+            document.getElementById("b12").value = c12;
+
+
+
+            document.getElementById("z1").value = c1;
+            document.getElementById("z2").value = c2;
+            document.getElementById("z3").value = c3;
+            document.getElementById("z4").value = c4;
+            document.getElementById("z5").value = c5;
+            document.getElementById("z6").value = c6;
+            document.getElementById("z7").value = c7;
+            document.getElementById("z8").value = c8;
+            document.getElementById("z9").value = c9;
+            document.getElementById("z10").value = c10;
+            document.getElementById("z11").value = c11;
+            document.getElementById("z12").value = c12;
+
+
+            var a = parseFloat($("#obs_2").val());//для картины
+            var b = parseFloat($("#obs_21").val());//ширина картины
+            var v7 = parseFloat($("#obs_22").val());//ширина профиля рамы
+            var v8 = parseFloat($("#obs_22_2").val());//ширина профиля рамы 2
+            var i = parseFloat($("#visotp2").val());//тип подвеса
+            var c = parseFloat($("#etagey2").val());// тип профиля рамы
+            var p = parseFloat($("#etagey2_2").val());// тип профиля рамы2
+            var h = parseFloat($('input[name="stena2[]"]:checked').val());//окраска 
+            var d = parseFloat($("#paspartu2").val());// тип паспорту d
+            var t = parseFloat($("#shirina_paspartu2").val());// тип паспорту D
+            var e = parseFloat($("#tip_stekla2").val());// тип стекла e
+
+            var f = parseFloat($("#tip_zadnika2").val());//f1 – переплётный картон = 0,029 руб/см.кв
+            var j = 200;//для второго калькулятора
+            var v5 = $('#mainresult2');
+            var text, text2, summa, text3;
+            text = 'Подробный расчет: ((' + a + '+' + b + '2*' + t + ')' + '*2 + 8 *' + v7 + ')*' + c + '+ ' + i + '+(' + a + '+' + b + '2*' + t + ')*' + d + '((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + e + '((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + f + '+((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + h + '+' + '+' + j + ' = ';
+            // ((a+b)*2+8*C1)*c+((a+b+4*C1)*2)*h=x1
+            var x1 = ((a + b) * 2 + 8 * v7) * c + ((a + b + 4 * v7) * 2) * h;
+            var Y = a + 2 * v7;
+            var Z = b + 2 * v7;
+
+
+            // ((a+2*C2)+(b+2*C2))*c+i+((a+b+2*C2)*2)*h+J+x1
+            text2 = ((Y + Z) * 2 + 8 * v8) * c + i + ((Y + Z + 8 * v8) * 2) * h + j + x1
+            text3 = 'руб.';
+            text4 = 'Итого: ';
+            summa1 = text4 + '' + text2;
+            if (text2 === text2) { } else {
+                return 0;
+            }
+            var res = text2.toFixed(1);
+            summa = text + ' ' + res + ' ' + text3;
+            // все что выбрали
+            var text5 = $('#etagey2').find(":selected").text();
+            var text6 = $("#visotp2").find(":selected").text();
+            var text7 = $(".radiob2").find('input[name="stena2[]"]:checked').closest('label').text();
+            var text8 = '( ' + a + 'x' + b + ' )';
+            var text9 = $("#etagey2_2").find(":selected").text();
+
+            var summa_vsego = text8 + '/' + text5 + '/' + text6 + '/' + text7 + '/' + text9 + ' = ' + summa1;
+            $('#mainresults2').val(text2);
+            // $('.txt_2').html(summa);
+            $('.txt_21').html(summa1);
+            $('.txt_22').html(summa_vsego);
+
+
+
+        }
+
+        // для калькулятора 3
+
+        $('#maincals3').on('change input', calcAndShow3);
+        function calcAndShow3() {
+
+
+
+            document.getElementById("v1").value = c1;
+            document.getElementById("v2").value = c2;
+            document.getElementById("v3").value = c3;
+            document.getElementById("v4").value = c4;
+            document.getElementById("v5").value = c5;
+            document.getElementById("v6").value = c6;
+            document.getElementById("v7").value = c7;
+            document.getElementById("v8").value = c8;
+            document.getElementById("v9").value = c9;
+            document.getElementById("v10").value = c10;
+            document.getElementById("v11").value = c11;
+            document.getElementById("v12").value = c12;
+
+            var a = parseFloat($("#obs3").val());//для картины
+            var b = parseFloat($("#obs31").val());//ширина картины
+            var v7 = parseFloat($("#obs32").val());//ширина профиля рамы
+            var i = parseFloat($("#visotp3").val());//тип подвеса
+            var c = parseFloat($("#etagey3").val());// тип профиля рамы
+            var h = parseFloat($('input[name="stena3[]"]:checked').val());//окраска 
+            var d = parseFloat($("#paspartu").val());// тип паспорту d
+            var t = parseFloat($("#shirina_paspartu").val());// тип паспорту D
+            var e = parseFloat($("#tip_stekla").val());// тип паспорту D
+            // var j = 200;
+            var f = parseFloat($("#tip_zadnika").val());//f1 – переплётный картон = 0,029 руб/см.кв
+            var j = 300;//для третьего калькулятора
+            var v5 = $('#mainresult3');
+            var text, text2, summa, text3;
+            text = 'Подробный расчет: ((' + a + '+' + b + '2*' + t + ')' + '*2 + 8 *' + v7 + ')*' + c + '+ ' + i + '+(' + a + '+' + b + '+' + '2*' + t + ')*' + d + '+((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + e + '+((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + f + '+((' + a + '+' + b + '2*' + t + ')*2 +8 *' + v7 + ')*' + h + '+' + '+' + j + ' = ';
+
+            text2 = ((a + b + 2 * t) * 2 + 8 * v7) * c + i + (a + b + 2 * t) * d + ((a + b + 2 * t) * 2 + 8 * v7) * e + ((a + b + 2 * t) * 2 + 8 * v7) * f + ((a + b + 2 * t) * 2 + 8 * v7) * h + j;
+
+            text3 = 'руб.';
+            text4 = 'Итого: ';
+            summa1 = text4 + '' + text2;
+            if (text2 === text2) { } else {
+                return 0;
+            }
+            var res = text2.toFixed(1);
+            summa = text + ' ' + res + ' ' + text3;
+            // все что выбрали
+            var text5 = $('#etagey3').find(":selected").text();
+            var text6 = $("#visotp3").find(":selected").text();
+            var text7 = $(".radiob3").find('input[name="stena3[]"]:checked').closest('label').text();
+            var text8 = '( ' + a + 'x' + b + ' )';
+            var text9 = $("#paspartu").find(":selected").text();
+            var text10 = $("#shirina_paspartu").find(":selected").text();
+            var text11 = $("#tip_zadnika").find(":selected").text();
+            var summa_vsego = text8 + '/' + text5 + '/' + text6 + '/' + text7 + '/' + text9 + '/' + text10 + '/' + text11 + ' = ' + summa1;
+            $('#mainresults3').val(text2);
+            $('.txt3').html(summa);
+            $('.txt31').html(summa1);
+            $('.txt32').html(summa_vsego);
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
